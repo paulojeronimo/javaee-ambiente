@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source ~/.`hostname -s`
+maven_instalar
+#gradle_instalar
+forge_instalar
+postgresql_instalar
+jboss_instalar
+[ "$DISPLAY" ] && eclipse_instalar
