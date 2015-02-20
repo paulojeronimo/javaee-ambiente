@@ -8,3 +8,5 @@ ECLIPSE_INSTALADOR_URL=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/rele
 ECLIPSE_CONFIGURADO=eclipse.tar.gz
 export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR
 export PATH=$ECLIPSE_HOME:$PATH
+
+alias eclipse='eclipse &> /dev/null &'
