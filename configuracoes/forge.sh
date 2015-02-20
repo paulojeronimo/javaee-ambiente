@@ -7,3 +7,5 @@ FORGE_INSTALADOR_URL_COMPLETA=https://repository.jboss.org/nexus/service/local/a
 
 export FORGE_HOME=$FERRAMENTAS_DIR/forge
 export PATH=$FORGE_HOME/bin:$PATH
+
+# vim set ts=4, sw=4, expandtab:

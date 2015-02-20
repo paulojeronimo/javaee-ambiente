@@ -6,3 +6,5 @@ case $distro in
 esac
 unset distro
 export PATH=$JAVA_HOME/bin:$PATH
+
+# vim set ts=4, sw=4, expandtab:

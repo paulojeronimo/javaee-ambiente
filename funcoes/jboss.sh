@@ -59,3 +59,5 @@ jboss_deployments() { ls -lht "$JBOSS_DEPLOYMENTS"; }
 jboss_markfile() { touch "$JBOSS_DEPLOYMENTS"/$1; }
 jboss_unmarkfile() { rm "$JBOSS_DEPLOYMENTS"/$1; }
 # .JBoss - Funções.fim
+
+# vim: ts=4 sw=4 expandtab:

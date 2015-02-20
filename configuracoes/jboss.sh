@@ -31,3 +31,5 @@ JBOSS_BASE=$JBOSS_HOME/standalone
 JBOSS_CONFIGURATION=$JBOSS_BASE/configuration
 JBOSS_DEPLOYMENTS=$JBOSS_BASE/deployments
 JBOSS_LOG=$JBOSS_BASE/log
+
+# vim set ts=4, sw=4, expandtab:
