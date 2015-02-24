@@ -1,0 +1,11 @@
+--- forge.original	2015-02-20 17:27:38.720110523 -0200
++++ forge	2015-02-20 17:42:37.830255342 -0200
+@@ -160,7 +160,7 @@
+ 
+ #
+ if [ -r "$FORGE_HOME/addons/" ] ; then
+-  ADDONS_DIR="--immutableAddonDir $FORGE_HOME/addons/"
++  ADDONS_DIR="--immutableAddonDir \"$FORGE_HOME/addons/\""
+ fi
+ 
+ forge_exec_cmd="\"$JAVACMD\" $FORGE_DEBUG_ARGS $FORGE_OPTS \"-Dforge.standalone=true\" \"-Dforge.home=${FORGE_HOME}\" \
