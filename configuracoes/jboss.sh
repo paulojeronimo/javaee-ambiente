@@ -1,5 +1,5 @@
 JBOSS_LINK=jboss
-JBOSS_TYPE=jboss_eap # jboss_eap, wildfly
+JBOSS_TYPE=wildfly # jboss_eap, wildfly
 
 case $JBOSS_TYPE in
     wildfly)

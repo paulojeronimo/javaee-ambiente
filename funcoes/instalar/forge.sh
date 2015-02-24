@@ -2,7 +2,7 @@ instala_forge() {
     instala_aplicacao
     
     echo "Aplicando patch no script de execução do forge"
-    patch "$FORGE_HOME"/bin/forge < "$FUNCOES_DIR"/instalar/patches/forge
+    patch "$FORGE_HOME"/bin/forge < "$FUNCOES_DIR"/instalar/patches/FORGE_HOME/bin/forge
 
     echo "Instalando addons"
     forge_instalar_addons
