@@ -1,5 +1,5 @@
 JBOSS_LINK=jboss
-JBOSS_TYPE=wildfly # jboss_eap, wildfly
+JBOSS_TYPE=${JBOSS_TYPE:-wildfly} # jboss_eap, wildfly
 
 case $JBOSS_TYPE in
     wildfly)
@@ -9,7 +9,7 @@ case $JBOSS_TYPE in
         JBOSS_INSTALADOR_URL_COMPLETA=http://download.jboss.org/wildfly/$JBOSS_VER/$JBOSS_INSTALADOR
         ;;
     jboss_eap)
-        JBOSS_VER=6.3.0 # 6.3.0, 6.4.0.Beta
+        JBOSS_VER=${JBOSS_VER:-6.3.0} # 6.3.0, 6.4.0.Beta
         case $JBOSS_VER in
             6.3.0)
                 JBOSS_DIR=jboss-eap-6.3
