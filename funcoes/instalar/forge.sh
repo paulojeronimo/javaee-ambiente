@@ -1,8 +1,11 @@
 instala_forge() {
     instala_aplicacao
-    
-    echo "Aplicando patch no script de execução do forge"
-    patch "$FORGE_HOME"/bin/forge < "$FUNCOES_DIR"/instalar/patches/FORGE_HOME/bin/forge
+
+    if [ "$FORGE_VER" = "2.14.0.Final" ]
+    then
+        echo "Aplicando patch no script de execução do forge"
+        patch "$FORGE_HOME"/bin/forge < "$FUNCOES_DIR"/instalar/patches/FORGE_HOME/bin/forge
+    fi
 
     echo "Instalando addons"
     forge_instalar_addons
