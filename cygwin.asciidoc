@@ -1,0 +1,54 @@
+= Instalação do Cygwin
+:author: Paulo Jerônimo
+:email: paulojeronimo@gmail.com
+
+== Instalação, em modo silencioso, com os pacotes básicos necessários
+
+Faça o download do executável de instalação do Cygwin (`setup-x86_64.exe`) em http://cygwin.com. Neste tutorial, será exemplificada a instalação da versão do Cygwin num Windows 64 bits.
+
+Abra o prompt de comando do Windows (`cmd.exe`) e execute:
+
+----
+C:\User\aluno> cd Downloads
+C:\User\aluno> setup-x86_64.exe -q -P wget
+----
+
+== Mudança do HOME para o diretório apontado por USERPROFILE
+
+Abra o Cygwin e execute:
+
+[source,bash]
+----
+mkpasswd -l -p "$(cygpath -H)" > /etc/passwd
+logout
+----
+
+Reinicie o Cygwin e execute:
+
+[source,bash]
+----
+shopt -s dotglob
+mv /home/$USER/* ~
+logout
+----
+
+== Instalação do apt-cyg
+
+[source,bash]
+----
+wget raw.github.com/transcode-open/apt-cyg/master/apt-cyg
+chmod +x apt-cyg
+mv apt-cyg /usr/local/bin
+----
+
+== Instalação de pacotes (essenciais e úteis)
+
+[source,bash]
+----
+apt-cyg install git vim tmux tree unzip procps
+----
+
+== Referências
+
+* http://stackoverflow.com/questions/9260014/how-do-i-install-cygwin-components-from-the-command-line
+
