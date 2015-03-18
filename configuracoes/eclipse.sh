@@ -11,6 +11,10 @@ ECLIPSE_CONFIGURADO=eclipse.tar.gz
 export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR
 export PATH=$ECLIPSE_HOME:$PATH
 
-alias eclipse='eclipse &> /dev/null &'
+eclipse() {
+    local eclipse_bin=eclipse
+    [ "$PLATAFORMA" = "Cygwin" ] && eclipse_bin="eclipse.exe"
+    "$ECLIPSE_HOME"/$eclipse_bin &> /dev/null &
+}
 
 # vim set ts=4, sw=4, expandtab:

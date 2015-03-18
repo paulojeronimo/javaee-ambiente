@@ -4,9 +4,10 @@ _saia_do_eclipse() {
     echo "antes de executar esta operação, encerre o eclipse!"
 }
 eclipse_em_execucao() {
-    case `uname` in
+    case $PLATAFORMA in
         Linux) ps -o ucmd | grep -q eclipse;;
         Darwin) ps -o comm | grep -q eclipse;;
+        Cygwin) ps | grep -q eclipse;;
     esac
 }
 eclipse_salvar_workspace() {

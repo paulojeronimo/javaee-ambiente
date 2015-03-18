@@ -4,7 +4,11 @@ instala_eclipse() {
         eclipse_restaurar
     else
         instala_aplicacao
-    fi
+        if [ "$PLATAFORMA" = "Cygwin" ]
+        then
+            find "$ECLIPSE_HOME" -type f -name "*.dll" -exec chmod +x {} \;
+        fi
+     fi
 }
 
 remove_eclipse() {
