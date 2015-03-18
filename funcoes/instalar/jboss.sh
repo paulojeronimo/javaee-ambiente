@@ -38,7 +38,7 @@ _instala_wildfly() {
     local patch_file
     instala_aplicacao
 
-    if [ "`uname`" = "Linux" ]
+    if [ "$PLATAFORMA" = "Linux" ]
     then
         echo "Criando o arquivo `_wildfly_conf` ..."
         cat <<EOF | sudo tee `_wildfly_conf` &> /dev/null
@@ -76,7 +76,7 @@ EOF
     echo 'admin=e17dc970fbc40f5d003d1e3e431985f5' | tee -a "$JBOSS_CONFIGURATION"/mgmt-users.properties &> /dev/null
     echo 'admin=' | tee -a "$JBOSS_CONFIGURATION"/mgmt-groups.properties &> /dev/null
 
-    if [ "`uname`" = "Linux" ]
+    if [ "$PLATAFORMA" = "Linux" ]
     then
         echo "Configurando a inicialização automática no boot"
         case `distro` in
@@ -87,7 +87,7 @@ EOF
 }
 
 _remove_wildfly() {
-    if [ "`uname`" = "Linux" ]
+    if [ "$PLATAFORMA" = "Linux" ]
     then
         local jboss_files="/etc/init.d/jboss `_wildfly_conf`"
         for f in $jboss_files

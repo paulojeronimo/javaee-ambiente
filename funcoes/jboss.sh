@@ -6,7 +6,7 @@ jboss_remover() { remover jboss "$@"; }
 # funções de inicialização/parada/status: 
 _jboss_service() {
     local op=$1
-    case `uname` in
+    case $PLATAFORMA in
         Linux)
             case `distro` in
                 Fedora) 
@@ -32,7 +32,7 @@ _jboss_service() {
                     ;;
             esac
             ;;
-        Darwin)
+        Cygwin|Darwin)
             case $op in
                 start) standalone.sh -b 0.0.0.0 &;;
                 stop) jboss-cli.sh -c :shutdown;;
