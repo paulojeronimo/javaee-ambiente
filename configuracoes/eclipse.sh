@@ -6,9 +6,9 @@ case $PLATAFORMA in
     Cygwin) ECLIPSE_INSTALADOR=eclipse-jee-luna-SR2-win32-x86_64.zip;;
 esac
 ECLIPSE_INSTALADOR_URL=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/luna/SR2
-ECLIPSE_CONFIGURADO=eclipse.tar.gz
+ECLIPSE_CONFIGURADO=eclipse.$PLATAFORMA.tar.gz
 
-export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR
+export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR.$PLATAFORMA
 export PATH=$ECLIPSE_HOME:$PATH
 
 eclipse() {
