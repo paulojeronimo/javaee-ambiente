@@ -24,7 +24,10 @@ case $JBOSS_TYPE in
         ;;
 esac
 
-export JBOSS_HOME=$FERRAMENTAS_DIR/jboss
+case $PLATAFORMA in
+    Cygwin) export JBOSS_HOME=`cygpath "$JBOSS_HOME"`;;
+    *) export JBOSS_HOME=$FERRAMENTAS_DIR/jboss;;
+esac
 export PATH=$JBOSS_HOME/bin:$PATH
 
 JBOSS_BASE=$JBOSS_HOME/standalone

@@ -5,7 +5,10 @@ FORGE_DIR=$FORGE_PACKAGE-$FORGE_VER
 FORGE_INSTALADOR=$FORGE_DIR-offline.zip
 FORGE_INSTALADOR_URL_COMPLETA="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.forge&a=forge-distribution&v=$FORGE_VER&e=zip&c=offline"
 
-export FORGE_HOME=$FERRAMENTAS_DIR/forge
+case $PLATAFORMA in
+    Cygwin) export FORGE_HOME=`cygpath "$FORGE_HOME"`;;
+    *) export FORGE_HOME=$FERRAMENTAS_DIR/forge;;
+esac
 export PATH=$FORGE_HOME/bin:$PATH
 
 # vim set ts=4, sw=4, expandtab:
