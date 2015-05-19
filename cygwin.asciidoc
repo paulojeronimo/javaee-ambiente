@@ -2,6 +2,10 @@
 :author: Paulo Jerônimo
 :email: paulojeronimo@gmail.com
 
+== Motivação
+
+A instalação do http://cygwin.com[Cygwin] no Windows oferece facilidade na instalação de várias ferramentas que serão utilizadas na montagem de um ambiente Java EE mais profissional. No contexto desse projeto (`javaee-ambiente`) ele é necessário para a execução de scripts (escritos em Bash) que automatizam a instalação e facilitam o uso de diversas ferramentas. Além disso, é através do Cygwin que são instalados o Git, o Vim, o Tmux, dentre outros.
+
 == Instalação, em modo silencioso, com os pacotes básicos necessários
 
 Faça o download do executável de instalação do Cygwin (`setup-x86_64.exe`) em http://cygwin.com. Neste tutorial, será exemplificada a instalação da versão do Cygwin num Windows 64 bits.
@@ -36,9 +40,9 @@ logout
 
 [source,bash]
 ----
-wget raw.github.com/transcode-open/apt-cyg/master/apt-cyg
-chmod +x apt-cyg
-mv apt-cyg /usr/local/bin
+lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
+install apt-cyg /bin
+rm apt-cyg
 ----
 
 == Instalação de pacotes (essenciais e úteis)
@@ -48,7 +52,27 @@ mv apt-cyg /usr/local/bin
 apt-cyg install git vim tmux tree unzip procps
 ----
 
+== Configuração do Git (em ambientes que não suportam o protocolo git://)
+
+[source,bash]
+----
+git config --global url."https://".insteadOf git://
+----
+
+== Procedimentos para remoção do Gygwin (instalado em C:/cygwin64)
+
+. Abrir o "Prompt de Comando (Admin)"
+. Executar os seguintes comandos:
+[source]
+----
+takeown /f C:\cygwin64 /r /d Y
+icacls c:\cygwin64 /T /Q /C /reset
+rmdir /s /q C:\cygwin64
+----
+
 == Referências
 
+* https://github.com/transcode-open/apt-cyg
 * http://stackoverflow.com/questions/9260014/how-do-i-install-cygwin-components-from-the-command-line
+* http://jgoodall.me/posts/2013/05/29/git-use-https/
 
