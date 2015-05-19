@@ -7,8 +7,10 @@ FORGE_INSTALADOR_URL_COMPLETA="https://repository.jboss.org/nexus/service/local/
 
 case $PLATAFORMA in
     Cygwin) export FORGE_HOME=`cygpath "$FORGE_HOME"`;;
-    *) export FORGE_HOME=$FERRAMENTAS_DIR/forge;;
+    *) 
+        export FORGE_HOME=$FERRAMENTAS_DIR/forge
+        export PATH=$FORGE_HOME/bin:$PATH
+        ;;
 esac
-export PATH=$FORGE_HOME/bin:$PATH
 
 # vim set ts=4, sw=4, expandtab:

@@ -9,7 +9,10 @@ ECLIPSE_INSTALADOR_URL=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/rele
 ECLIPSE_CONFIGURADO=eclipse.$PLATAFORMA.tar.gz
 
 export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR.$PLATAFORMA
-export PATH=$ECLIPSE_HOME:$PATH
+if ! [ "$PLATAFORMA" = "Cygwin" ]
+then
+    export PATH=$ECLIPSE_HOME:$PATH
+fi
 
 eclipse() {
     local eclipse_bin=eclipse

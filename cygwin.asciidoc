@@ -92,6 +92,29 @@ apt-cyg install git vim tmux tree unzip procps
 git config --global url."https://".insteadOf git://
 ----
 
+== Instalação dos projetos dotfiles e javaee-ambiente
+
+Instale o projeto dotfiles (faça o clone a partir de teu fork se tiver um):
+
+[source,bash]
+----
+cd && git clone http://github.com/paulojeronimo/dotfiles
+dotfiles/install
+logout
+----
+
+Reabra o Cygwin.
+
+Instale o projeto javae-ambiente (faça o clone a partir do teu fork se tiver um):
+
+[source,bash]
+----
+cd && git clone http://github.com/paulojeronimo/javaee-ambiente
+cd javaee-ambiente
+setenv ambiente
+logout
+----
+
 == Procedimentos para remoção do Gygwin (instalado em C:/cygwin64)
 
 . Abrir o "Prompt de Comando (Admin)"

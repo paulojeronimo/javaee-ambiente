@@ -6,8 +6,10 @@ GRADLE_INSTALADOR_URL_COMPLETA=https://services.gradle.org/distributions/$GRADLE
 
 case $PLATAFORMA in
     Cygwin) export GRADLE_HOME=`cygpath "$GRADLE_HOME"`;;
-    *) export GRADLE_HOME=$FERRAMENTAS_DIR/gradle
+    *) 
+        export GRADLE_HOME=$FERRAMENTAS_DIR/gradle
+        export PATH=$GRADLE_HOME/bin:$PATH
+        ;;
 esac
-export PATH=$GRADLE_HOME/bin:$PATH
 
 # vim set ts=4, sw=4, expandtab:

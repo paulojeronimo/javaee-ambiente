@@ -6,8 +6,10 @@ MAVEN_INSTALADOR_URL=http://linorg.usp.br/apache/maven/maven-3/$MAVEN_VER/binari
 
 case $PLATAFORMA in
     Cygwin) export M2_HOME=`cygpath "$M2_HOME"`;;
-    *) export M2_HOME=$FERRAMENTAS_DIR/maven;;
+    *) 
+        export M2_HOME=$FERRAMENTAS_DIR/maven
+        export PATH=$M2_HOME/bin:$PATH
+        ;;
 esac
-export PATH=$M2_HOME/bin:$PATH
 
 # vim set ts=4, sw=4, expandtab:
