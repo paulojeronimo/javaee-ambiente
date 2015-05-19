@@ -10,18 +10,19 @@ A instalação do http://cygwin.com[Cygwin] no Windows oferece facilidade na ins
 
 Neste tutorial, será exemplificada a instalação da versão do Cygwin num Windows 64 bits.
 
-Faça o download do executável de instalação do Cygwin (`setup-x86_64.exe em http://cygwin.com) para o diretório `Downloads` de teu usuário. 
+Faça o download do executável de instalação do Cygwin https://cygwin.com/setup-x86_64.exe[(setup-x86_64.exe)] para o diretório `Downloads` de teu usuário. 
 
 Abra o prompt de comando do Windows (`cmd.exe`) e execute:
 
 ----
 cd %USERPROFILE%\Downloads
-setup-x86_64.exe
+setup-x86_64.exe -q -P wget
 ----
 
-Como sugestão de mirror rápido utilize o http://mirrors.kernel.org (se ele estiver disponível na lista de mirrors apresentada).
+Como sugestão para pasta local onde serão mantidos os downloads realizados pelo Cygwin utilize `C:\cygwin64.packages`.
 
-Como pasta local para manter os pacotes que serão baixados pelo Cygwin, sugiro a pasta `C:\cygwin64.packages`.
+Como sugestão de `mirror` de onde serão realizados os downloads do Cygwin utilize http://mirrors.kernel.org (se ele estiver disponível na lista apresentada).
+
 
 == Mudança do HOME para o diretório apontado por USERPROFILE
 
@@ -43,15 +44,38 @@ rm -rf /home/$USER
 logout
 ----
 
+== Ajuste do encoding para UTF-8
+
+Para ajustar o suporte para UTF-8 (em português do Brasil (pt_BR)), reabra um shell do Cygwin e execute:
+
+[source,bash]
+----
+echo 'export LANG=pt_BR.UTF-8' >> ~/.bashrc
+logout
+----
+
+Reinicie novamente o Cygwin e confira o encoding com o comando `locale`, como no exemplo a seguir:
+
+----
+$ locale
+LANG=pt_BR.UTF-8
+LC_CTYPE="pt_BR.UTF-8"
+LC_NUMERIC="pt_BR.UTF-8"
+LC_TIME="pt_BR.UTF-8"
+LC_COLLATE="pt_BR.UTF-8"
+LC_MONETARY="pt_BR.UTF-8"
+LC_MESSAGES="pt_BR.UTF-8"
+LC_ALL=
+----
+
 == Instalação do apt-cyg
 
 O utilitário `apt-cyg` é um gerenciador de pacotes que funciona via linha de comando, assim como o `yum` (no Fedora) ou o `apt-get` (em distribuições derivadas do Debian). Reinicie novamente o Cygwin e execute:
 
 [source,bash]
 ----
-lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
-install apt-cyg /bin
-rm apt-cyg
+lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > /tmp/apt-cyg
+install /tmp/apt-cyg /bin
 ----
 
 == Instalação de pacotes (essenciais e úteis)
@@ -81,6 +105,7 @@ rmdir /s /q C:\cygwin64
 
 == Referências
 
+* https://cygwin.com/cygwin-ug-net/setup-locale.html
 * https://github.com/transcode-open/apt-cyg
 * http://stackoverflow.com/questions/9260014/how-do-i-install-cygwin-components-from-the-command-line
 * http://jgoodall.me/posts/2013/05/29/git-use-https/
