@@ -1,6 +1,6 @@
 keycloak() {
-    local offset=100
     local op=$1
+    local offset=${KEYCLOAK_OFFSET:-0}
 
     case $op in
         start)

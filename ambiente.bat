@@ -19,6 +19,7 @@ set BPMS_HOME=%FERRAMENTAS_HOME%\jboss-bpms-6.0.3.GA-AD\jboss-eap-6.1
 
 rem Keycloak
 set KEYCLOAK_HOME=%FERRAMENTAS_HOME%\keycloak-1.2.0.Final
+set KEYCLOAK_OFFSET=0
 
 set ECLIPSE_HOME=%FERRAMENTAS_HOME%\eclipse.Cygwin
 set PATH=%ECLIPSE_HOME%;%PATH%
