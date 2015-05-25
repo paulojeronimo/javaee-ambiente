@@ -9,15 +9,15 @@ case $JBOSS_TYPE in
         JBOSS_INSTALADOR_URL_COMPLETA=http://download.jboss.org/wildfly/$JBOSS_VER/$JBOSS_INSTALADOR
         ;;
     jboss_eap)
-        JBOSS_VER=${JBOSS_VER:-6.3.0} # 6.3.0, 6.4.0.Beta
+        JBOSS_VER=${JBOSS_VER:-6.4.0} # 6.3.0, 6.4.0
         case $JBOSS_VER in
             6.3.0)
                 JBOSS_DIR=jboss-eap-6.3
                 JBOSS_INSTALADOR=$JBOSS_DIR.0.zip
                 ;;
-            6.4.0.Beta)
+            6.4.0)
                 JBOSS_DIR=jboss-eap-6.4
-                JBOSS_INSTALADOR=$JBOSS_DIR.0.Beta.zip
+                JBOSS_INSTALADOR=$JBOSS_DIR.0.zip
                 ;;
         esac
         JBOSS_INSTALA_OPCS='--nao-baixa-arquivo'
@@ -25,7 +25,9 @@ case $JBOSS_TYPE in
 esac
 
 case $PLATAFORMA in
-    Cygwin) export JBOSS_HOME=`cygpath "$JBOSS_HOME"`;;
+    Cygwin) 
+        [ "$JBOSS_HOME" ] && export JBOSS_HOME=`cygpath "$JBOSS_HOME"`
+        ;;
     *) 
         export JBOSS_HOME=$FERRAMENTAS_DIR/jboss
         export PATH=$JBOSS_HOME/bin:$PATH

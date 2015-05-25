@@ -1,21 +1,24 @@
 @echo off
 
-set AMBIENTE_HOME=%USERPROFILE%\javaee-ambiente
+rem AMERDA do Windows tem problemas com nomes longos. Então, é interessante evitar este caminho:
+rem set AMBIENTE_HOME=%USERPROFILE%\javaee-ambiente
 
+rem Uma solução que não teve o problema acima:
+set AMBIENTE_HOME=C:\pj
+
+rem Diretório em que as ferramentas são instaladas:
 set FERRAMENTAS_HOME=%AMBIENTE_HOME%\ferramentas
 
-rem #### Configuração do JBoss - Início ####
-rem JBoss EAP 6.4
-rem set JBOSS_HOME=%FERRAMENTAS_HOME%\jboss-eap-6.4
+rem JBOSS EAP
+set JBOSS_TYPE=jboss_eap
+set JBOSS_HOME=%FERRAMENTAS_HOME%\jboss-eap-6.4
+set PATH=%JBOSS_HOME%\bin;%PATH%
 
-rem JBoss BPMS
-rem set JBOSS_HOME=%FERRAMENTAS_HOME%\jboss-bpms-6.0.3.GA-AD\jboss-eap-6.1
+rem JBoss BPM Suite (BPMS)
+set BPMS_HOME=%FERRAMENTAS_HOME%\jboss-bpms-6.0.3.GA-AD\jboss-eap-6.1
 
 rem Keycloak
-set JBOSS_HOME=%FERRAMENTAS_HOME%\keycloak-1.2.0.Final
-
-set PATH=%JBOSS_HOME%\bin;%PATH%
-rem #### Configuração do JBoss - Fim ####
+set KEYCLOAK_HOME=%FERRAMENTAS_HOME%\keycloak-1.2.0.Final
 
 set ECLIPSE_HOME=%FERRAMENTAS_HOME%\eclipse.Cygwin
 set PATH=%ECLIPSE_HOME%;%PATH%
@@ -38,5 +41,6 @@ set PATH=%JAVA_HOME%\bin;%PATH%
 rem PATH p/ localização de binários instalados via gem (ex.: asciidoctor)
 set PATH=%USERPROFILE%\bin;%PATH%
 
+rem Caminho para o Cygwin e seus binários (será o primeiro no PATH)
 set CYGWIN_HOME=C:\cygwin64
 set PATH=%CYGWIN_HOME%\bin;%PATH%
