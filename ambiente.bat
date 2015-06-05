@@ -30,7 +30,7 @@ set PATH=%FORGE_HOME%\bin;%PATH%
 set GRADLE_HOME=%FERRAMENTAS_HOME%\gradle-2.3
 set PATH=%GRADLE_HOME%\bin;%PATH%
 
-set M2_HOME=%FERRAMENTAS_HOME%\apache-maven-3.2.5
+set M2_HOME=%FERRAMENTAS_HOME%\apache-maven-3.3.3
 set PATH=%M2_HOME%\bin;%PATH%
 
 set ANT_HOME=%FERRAMENTAS_HOME%\apache-ant-1.9.4
