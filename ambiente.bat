@@ -33,7 +33,7 @@ set PATH=%GRADLE_HOME%\bin;%PATH%
 set M2_HOME=%FERRAMENTAS_HOME%\apache-maven-3.3.3
 set PATH=%M2_HOME%\bin;%PATH%
 
-set ANT_HOME=%FERRAMENTAS_HOME%\apache-ant-1.9.4
+set ANT_HOME=%FERRAMENTAS_HOME%\apache-ant-1.9.5
 set PATH=%ANT_HOME%\bin;%PATH%
 
 set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_75
