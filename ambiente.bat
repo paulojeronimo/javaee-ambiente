@@ -24,7 +24,7 @@ set KEYCLOAK_OFFSET=0
 set ECLIPSE_HOME=%FERRAMENTAS_HOME%\eclipse.Cygwin
 set PATH=%ECLIPSE_HOME%;%PATH%
 
-set FORGE_HOME=%FERRAMENTAS_HOME%\forge-distribution-2.15.2.Final
+set FORGE_HOME=%FERRAMENTAS_HOME%\forge-distribution-2.16.1.Final
 set PATH=%FORGE_HOME%\bin;%PATH%
 
 set GRADLE_HOME=%FERRAMENTAS_HOME%\gradle-2.3
