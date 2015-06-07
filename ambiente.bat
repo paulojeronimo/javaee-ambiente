@@ -27,7 +27,7 @@ set PATH=%ECLIPSE_HOME%;%PATH%
 set FORGE_HOME=%FERRAMENTAS_HOME%\forge-distribution-2.16.1.Final
 set PATH=%FORGE_HOME%\bin;%PATH%
 
-set GRADLE_HOME=%FERRAMENTAS_HOME%\gradle-2.3
+set GRADLE_HOME=%FERRAMENTAS_HOME%\gradle-2.4
 set PATH=%GRADLE_HOME%\bin;%PATH%
 
 set M2_HOME=%FERRAMENTAS_HOME%\apache-maven-3.3.3
