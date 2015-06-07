@@ -6,6 +6,12 @@ keycloak() {
         install)
             instalar keycloak "$@"
             ;;
+        change)
+            pushd "$FERRAMENTAS_HOME" &> /dev/null
+            unlink $KEYCLOAK_LINK &> /dev/null
+            ln -s "$KEYCLOAK_DIR" $KEYCLOAK_LINK
+            popd &> /dev/null
+            ;;
         start)
             JBOSS_HOME="$KEYCLOAK_HOME" "$KEYCLOAK_HOME"/bin/standalone.sh -Djboss.socket.binding.port-offset=$offset
             ;;
