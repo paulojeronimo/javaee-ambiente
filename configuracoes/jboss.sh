@@ -3,7 +3,7 @@ JBOSS_TYPE=${JBOSS_TYPE:-wildfly} # jboss_eap, wildfly
 
 case $JBOSS_TYPE in
     wildfly)
-        JBOSS_VER=8.2.0.Final
+        JBOSS_VER=${JBOSS_VER:-8.2.0.Final} # 8.1.0.Final, 8.2.0.Final
         JBOSS_DIR=wildfly-$JBOSS_VER
         JBOSS_INSTALADOR=$JBOSS_DIR.tar.gz
         JBOSS_INSTALADOR_URL_COMPLETA=http://download.jboss.org/wildfly/$JBOSS_VER/$JBOSS_INSTALADOR
