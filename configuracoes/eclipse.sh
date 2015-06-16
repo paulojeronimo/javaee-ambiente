@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ECLIPSE_DIR=eclipse
 ECLIPSE_LINK=$ECLIPSE_DIR
 case $PLATAFORMA in

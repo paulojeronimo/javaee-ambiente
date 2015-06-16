@@ -1,3 +1,5 @@
+#!/bin/bash
+
 instala_eclipse() {
     if [ -f "$INSTALADORES_DIR"/$ECLIPSE_CONFIGURADO ]
     then

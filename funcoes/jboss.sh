@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # .JBoss - Funções
 # funções de instalação e remoção:
 jboss_instalar() { instalar jboss "$@"; }

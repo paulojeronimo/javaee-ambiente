@@ -1,3 +1,5 @@
+#!/bin/bash
+
 gradle_instalar() { instalar gradle "$@"; }
 gradle_remover() { remover gradle "$@"; }
 

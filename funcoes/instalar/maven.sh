@@ -1,3 +1,5 @@
+#!/bin/bash
+
 instala_maven() {
     local settings_dir="$HOME"/.m2
     instala_aplicacao

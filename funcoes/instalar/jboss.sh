@@ -1,3 +1,5 @@
+#!/bin/bash
+
 _wildfly_conf() {
     case `distro` in
         Fedora|CentOS) echo -n /etc/default/wildfly.conf;;

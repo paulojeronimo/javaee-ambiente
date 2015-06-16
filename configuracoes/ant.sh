@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ANT_LINK=ant
 ANT_VER=1.9.5
 ANT_DIR=apache-ant-$ANT_VER

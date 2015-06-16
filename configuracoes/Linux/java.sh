@@ -1,3 +1,5 @@
+#!/bin/bash
+
 distro=`distro`
 case $distro in
     CentOS|Fedora) export JAVA_HOME=${JAVA_HOME:-/usr/java/latest};;

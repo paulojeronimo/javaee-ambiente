@@ -1,3 +1,5 @@
+#!/bin/bash
+
 FORGE_LINK=forge
 FORGE_PACKAGE=forge-distribution
 FORGE_VER=2.16.1.Final

@@ -1,12 +1,15 @@
+#!/bin/bash
+
 bpms() {
     local op=$1
+    local eap=jboss-eap-6.1
 
     case $op in
         start)
-            JBOSS_HOME=$BPMS_HOME $BPMS_HOME/bin/standalone.sh
+            JBOSS_HOME=$BPMS_HOME/$eap "$BPMS_HOME"/$eap/bin/standalone.sh &
             ;;
         stop)
-            JBOSS_HOME=$BPMS_HOME $BPMS_HOME/bin/jboss-cli.sh -c :shutdown
+            JBOSS_HOME=$BPMS_HOME/$eap "$BPMS_HOME"/$eap/bin/jboss-cli.sh -c :shutdown
             ;;
     esac
 }

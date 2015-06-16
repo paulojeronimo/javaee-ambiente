@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # .Funções diversas
 # localiza e mostra um trecho de código delimitado por uma marca dentro em algum script
 mostrar_marca() {

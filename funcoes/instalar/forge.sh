@@ -1,3 +1,5 @@
+#!/bin/bash
+
 instala_forge() {
     instala_aplicacao
 

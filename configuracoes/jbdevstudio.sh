@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Última versão (8.0.2): http://tools.jboss.org/downloads/devstudio/luna/8.0.2.GA.html
 
 JBDEVSTUDIO_INSTALADOR=jboss-devstudio-8.1.0.GA-updatesite-core.zip

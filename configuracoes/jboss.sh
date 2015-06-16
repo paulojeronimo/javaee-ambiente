@@ -1,3 +1,5 @@
+#!/bin/bash
+
 JBOSS_LINK=jboss
 JBOSS_TYPE=${JBOSS_TYPE:-wildfly} # jboss_eap, wildfly
 

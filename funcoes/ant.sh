@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ant_instalar() { instalar ant "$@"; }
 ant_remover() { remover ant "$@"; }
 

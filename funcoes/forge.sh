@@ -1,3 +1,5 @@
+#!/bin/bash
+
 forge_instalar() { instalar forge "$@"; }
 forge_remover() { remover forge "$@"; }
 forge_instalar_addons() {

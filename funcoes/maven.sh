@@ -1,3 +1,5 @@
+#!/bin/bash
+
 maven_instalar() { instalar maven "$@"; }
 maven_remover() { remover maven "$@"; }
 

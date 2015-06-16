@@ -1,3 +1,5 @@
+#!/bin/bash
+
 keycloak() {
     local op=$1
     local offset=${KEYCLOAK_OFFSET:-0}

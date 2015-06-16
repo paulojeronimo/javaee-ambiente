@@ -1,3 +1,5 @@
+#!/bin/bash
+
 GRADLE_LINK=gradle
 GRADLE_VER=2.4
 GRADLE_DIR=gradle-$GRADLE_VER

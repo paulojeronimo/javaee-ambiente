@@ -1,3 +1,5 @@
+#!/bin/bash
+
 eclipse_instalar() { instalar eclipse "$@"; }
 eclipse_remover() { remover eclipse "$@"; }
 _saia_do_eclipse() {

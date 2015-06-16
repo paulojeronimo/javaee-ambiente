@@ -1,3 +1,5 @@
+#!/bin/bash
+
 MAVEN_INSTALA_VIA_PACOTE=false
 
 if $MAVEN_INSTALA_VIA_PACOTE

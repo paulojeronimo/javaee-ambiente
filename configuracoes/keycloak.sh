@@ -1,3 +1,5 @@
+#!/bin/bash
+
 KEYCLOAK_VER=${KEYCLOAK_VER:-1.2.0.Final}
 KEYCLOAK_LINK=keycloak
 KEYCLOAK_BASE_URL=http://ufpr.dl.sourceforge.net/project/keycloak

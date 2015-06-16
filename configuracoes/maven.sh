@@ -1,3 +1,5 @@
+#!/bin/bash
+
 MAVEN_LINK=maven
 MAVEN_VER=3.3.3
 MAVEN_DIR=apache-maven-$MAVEN_VER

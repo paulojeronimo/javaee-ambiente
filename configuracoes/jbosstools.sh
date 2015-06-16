@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Última versão (4.2.2): http://tools.jboss.org/downloads/jbosstools/luna/4.2.2.Final.html
 
 JBOSSTOOLS_INSTALADOR=jbosstools-4.2.2.Final_2015-01-13_13-28-49-B326-updatesite-core.zip
