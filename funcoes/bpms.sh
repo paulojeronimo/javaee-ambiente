@@ -2,14 +2,19 @@
 
 bpms() {
     local op=$1
-    local eap=jboss-eap-6.1
 
     case $op in
         start)
-            JBOSS_HOME=$BPMS_HOME/$eap "$BPMS_HOME"/$eap/bin/standalone.sh &
+            # inicia o BPMS em seu diretório HOME pois serão criados alguns diretórios nele (.index .niogit .scecurity repositories)
+            cd "$BPMS_HOME"
+            JBOSS_HOME=$BPMS_EAP_HOME "$BPMS_EAP_HOME"/bin/standalone.sh
+            cd - &> /dev/null
             ;;
         stop)
-            JBOSS_HOME=$BPMS_HOME/$eap "$BPMS_HOME"/$eap/bin/jboss-cli.sh -c :shutdown
+            JBOSS_HOME=$BPMS_EAP_HOME "$BPMS_EAP_HOME"/bin/jboss-cli.sh -c :shutdown
+            ;;
+        home)
+            cd "$BPMS_HOME"
             ;;
     esac
 }
