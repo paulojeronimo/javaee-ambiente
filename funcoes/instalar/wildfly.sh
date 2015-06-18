@@ -34,7 +34,7 @@ EOF
     cp "$driver_file" "$driver_dir"/
 }
 
-_instala_wildfly() {
+instala_wildfly() {
     local file2patch
     local original_file
     local patch_file
@@ -88,7 +88,7 @@ EOF
     fi
 }
 
-_remove_wildfly() {
+remove_wildfly() {
     if [ "$PLATAFORMA" = "Linux" ]
     then
         local jboss_files="/etc/init.d/jboss `_wildfly_conf`"
@@ -102,22 +102,6 @@ _remove_wildfly() {
         done
     fi
     remove_aplicacao
-}
-
-_instala_jboss_eap() {
-    instala_aplicacao
-}
-
-_remove_jboss_eap() {
-    remove_aplicacao
-}
-
-instala_jboss() {
-    _instala_$JBOSS_TYPE
-}
-
-remove_jboss() {
-    _remove_$JBOSS_TYPE
 }
 
 # vim: set ts=4 sw=4 expandtab:

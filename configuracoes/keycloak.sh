@@ -23,7 +23,7 @@ case $PLATAFORMA in
     Cygwin) export KEYCLOAK_HOME=`cygpath "$KEYCLOAK_HOME"`;;
     *) 
         export KEYCLOAK_HOME
-        export PATH=$KEYCLOAK_HOME/bin:$PATH
+        #export PATH=$KEYCLOAK_HOME/bin:$PATH
         ;;
 esac
 
