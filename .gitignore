@@ -1,9 +1,9 @@
 .projetos
 ambiente.config
 backups
+documentos
 ferramentas
 instaladores
 projetos
 workspace
-scripts/.index
-scripts/.niogit
+scripts
