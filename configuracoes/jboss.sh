@@ -2,6 +2,7 @@
 
 JBOSS_LINK=jboss
 JBOSS_VER=${JBOSS_VER:-6.4} # versões suportadas: 6.4, 6.3.0
+JBOSS_INSTALA_DIR=${JBOSS_INSTALA_DIR:-$FUNCOES_DIR/instalar}
 case $JBOSS_VER in
     6.4)
         JBOSS_DIR=jboss-eap-6.4

@@ -1,9 +1,20 @@
 #!/bin/bash
 
+bpms_610_instalar() {
+    instalar bpms "$@"
+}
+
 bpms() {
     local op=$1
 
     case $op in
+        install)
+            case "$BPMS_VER" in
+                6.1) 
+                    bpms_610_instalar
+                    ;;
+            esac
+            ;;
         start)
             # inicia o BPMS em seu diretório HOME pois serão criados alguns diretórios nele (.index .niogit .scecurity repositories)
             if [ "$PLATAFORMA" = "Cygwin" ]

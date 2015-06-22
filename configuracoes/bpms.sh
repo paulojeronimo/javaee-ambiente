@@ -1,5 +1,15 @@
 #!/bin/bash
 
+BPMS_LINK=bpms
+BPMS_VER=${BPMS_VER:-6.1.0.GA}
+case "$BPMS_VER" in
+    6.1.0.GA)
+        BPMS_DIR=jboss-eap-6.4
+        BPMS_INSTALADOR=jboss-bpmsuite-$BPMS_VER-deployable-eap6.x.zip
+        ;;
+esac
+BPMS_INSTALA_OPCS='--nao-baixa-arquivo'
+
 case $PLATAFORMA in
     Cygwin) 
         [ "$BPMS_HOME" ] && export BPMS_HOME=`cygpath "$BPMS_HOME"`

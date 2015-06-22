@@ -14,9 +14,9 @@ set JBOSS_HOME=%FERRAMENTAS_HOME%\jboss-eap-6.4
 set PATH=%JBOSS_HOME%\bin;%PATH%
 
 rem JBoss BPM Suite
-set BPMS_VER=6.1
+set BPMS_VER=6.1.0.GA
 rem As variáveis a seguir são usadas apenas na versão 6.0.3:
-rem (na versão 6.1 apenas a variável JBOSS_HOME é utilizada)
+rem na versão 6.1.0 apenas a variável JBOSS_HOME é utilizada
 rem ########################################################
 rem set BPMS_HOME=%FERRAMENTAS_HOME%\jboss-bpms-6.0.3.GA-AD
 rem set BPMS_EAP_HOME=%FERRAMENTAS_HOME%\jboss-eap-6.1
