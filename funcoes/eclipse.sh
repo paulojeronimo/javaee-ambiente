@@ -51,5 +51,8 @@ eclipse_restaurar() {
 
     eclipse_restaurar_workspace
 }
+eclipse() {
+    "$ECLIPSE_HOME"/eclipse -data "$AMBIENTE_HOME"/workspace
+}
 
 # vim: set ts=4 sw=4 expandtab:
