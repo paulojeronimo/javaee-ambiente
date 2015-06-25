@@ -26,7 +26,7 @@ case $PLATAFORMA in
 esac
 
 # resolve o bug de não ter essa variável ajustada no standalone.sh antes da chamada a cygpath
-export JBOSS_MODULEPATH=$JBOSS_HOME/modules
+#export JBOSS_MODULEPATH=$JBOSS_HOME/modules
 
 JBOSS_BASE=$JBOSS_HOME/standalone
 JBOSS_CONFIGURATION=$JBOSS_BASE/configuration
