@@ -21,7 +21,7 @@ _wildfly_service() {
         Cygwin|Darwin)
             case $op in
                 start) 
-                    JBOSS_HOME="$WILDFLY_HOME" "$WILDFLY_HOME"/bin/standalone.sh -b 0.0.0.0
+                    JBOSS_HOME="$WILDFLY_HOME" "$WILDFLY_HOME"/bin/standalone.sh
                     ;;
                 stop) 
                     wildfly_cli -c :shutdown

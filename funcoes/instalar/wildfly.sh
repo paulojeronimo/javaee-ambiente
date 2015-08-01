@@ -58,7 +58,7 @@ EOF
                 ;;
             Ubuntu)
                 original_file="$JBOSS_HOME"/bin/init.d/wildfly-init-debian.sh
-                patch_file="$FUNCOES_DIR"/instalar/patches/JBOSS_HOME/bin/init.d/wildfly-init-debina.sh
+                patch_file="$FUNCOES_DIR"/instalar/patches/JBOSS_HOME/bin/init.d/wildfly-init-debian.sh
                 ;;
         esac
         echo "Aplicando patch ao arquivo \"$original_file\""

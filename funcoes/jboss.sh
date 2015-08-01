@@ -10,7 +10,7 @@ _jboss_service() {
                 Fedora) 
                     if [ "$op" = "start" ]
                     then 
-                        standalone.sh -b 0.0.0.0
+                        standalone.sh
                     else
                         jboss-cli.sh -c :shutdown
                     fi
@@ -23,7 +23,7 @@ _jboss_service() {
         Cygwin|Darwin)
             case $op in
                 start) 
-                    standalone.sh -b 0.0.0.0
+                    standalone.sh
                     ;;
                 stop) 
                     jboss-cli.sh -c :shutdown
