@@ -22,6 +22,10 @@ rem set BPMS_HOME=%FERRAMENTAS_HOME%\jboss-bpms-6.0.3.GA-AD
 rem set BPMS_EAP_HOME=%FERRAMENTAS_HOME%\jboss-eap-6.1
 rem ########################################################
 
+rem SQLCL
+set SQLCL_HOME=%FERRAMENTAS_HOME%\sqlcl
+set PATH=%SQLCL_HOME%\bin;%PATH%
+
 rem Keycloak
 rem set KEYCLOAK_VER=1.3.1.Final
 rem set KEYCLOAK_HOME=%FERRAMENTAS_HOME%\keycloak-%KEYCLOAK_VER%
