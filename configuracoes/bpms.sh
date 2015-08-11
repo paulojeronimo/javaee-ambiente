@@ -12,7 +12,10 @@ BPMS_INSTALA_OPCS='--nao-baixa-arquivo'
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$BPMS_HOME" ] && export BPMS_HOME=`cygpath "$BPMS_HOME"`
+        if [ "$BPMS_HOME" ]
+        then
+            export BPMS_HOME=`cygpath "$BPMS_HOME"`
+        fi
         ;;
     *)
         export BPMS_HOME=$FERRAMENTAS_DIR/jboss-bpms-6.0.3.GA-AD

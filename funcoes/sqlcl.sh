@@ -9,8 +9,6 @@ sqlcl() {
         remove)
             remover sqlcl "$@"
             ;;
-        start)
-            ;;
     esac
 }
 
