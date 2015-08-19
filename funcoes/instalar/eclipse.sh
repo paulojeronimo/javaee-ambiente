@@ -12,7 +12,8 @@ instala_eclipse() {
 
         if [ "$PLATAFORMA" = "Cygwin" ]
         then
-            echo "Marcando as dlls como executáveis em $ECLIPSE_HOME"
+            echo "Inserindo permissões de execução para arquivos em $ECLIPSE_HOME"
+            chmod +x "$ECLIPSE_HOME"/eclipse
             find "$ECLIPSE_HOME" -type f -name "*.dll" -exec chmod +x {} \;
         fi
      fi
