@@ -4,23 +4,35 @@ rem O Windows tem problemas com nomes longos. Então, evite-os!
 rem Use algo como "C:\tools":
 set AMBIENTE_HOME=C:\tools
 
-set FERRAMENTAS_HOME=%AMBIENTE_HOME%\java
+set FERRAMENTAS_DIR=%AMBIENTE_HOME%\java
 
 set JBOSS_VER=6.4
-set JBOSS_HOME=%FERRAMENTAS_HOME%\jboss-eap-6.4
+set JBOSS_HOME=%FERRAMENTAS_DIR%\jboss-eap-6.4
 set PATH=%JBOSS_HOME%\bin;%PATH%
 
-set SQLCL_HOME=%FERRAMENTAS_HOME%\sqlcl
+set SQLCL_HOME=%FERRAMENTAS_DIR%\sqlcl
 set PATH=%SQLCL_HOME%\bin;%PATH%
 
-set SQLDEVELOPER_HOME=%FERRAMENTAS_HOME%\sqldeveloper
+set SQLDEVELOPER_HOME=%FERRAMENTAS_DIR%\sqldeveloper
 
-set ECLIPSE_HOME=%FERRAMENTAS_HOME%\eclipse.Cygwin
+set ECLIPSE_HOME=%FERRAMENTAS_DIR%\eclipse.Cygwin
 set PATH=%ECLIPSE_HOME%;%PATH%
 
+set FORGE_VER=2.18.0.Final
+set FORGE_HOME=%FERRAMENTAS_DIR%\forge-distribution-%FORGE_VER%
+set PATH=%FORGE_HOME%\bin;%PATH%
+
+set GRADLE_VER=2.6
+set GRADLE_HOME=%FERRAMENTAS_DIR%\gradle-%GRADLE_VER%
+set PATH=%GRADLE_HOME%\bin;%PATH%
+
 set MAVEN_VER=3.3.3
-set M2_HOME=%FERRAMENTAS_HOME%\apache-maven-%MAVEN_VER%
+set M2_HOME=%FERRAMENTAS_DIR%\apache-maven-%MAVEN_VER%
 set PATH=%M2_HOME%\bin;%PATH%
+
+set ANT_VER=1.9.6
+set ANT_HOME=%FERRAMENTAS_DIR%\apache-ant-%ANT_VER%
+set PATH=%ANT_HOME%\bin;%PATH%
 
 rem set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_51
 rem set PATH=%JAVA_HOME%\bin;%PATH%

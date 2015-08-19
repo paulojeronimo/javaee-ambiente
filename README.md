@@ -29,4 +29,4 @@ Por fim, ajuste o ambiente que será utilizado alterando o arquivo ``~/.ambiente
 setenv ambiente
 ```
 
-Feche o shell. Altere o shortcut para a inicialização do Cygwin apontando-o para o script ``C:\tools\scripts\cygwin.bat``.
+Feche o shell. Altere o shortcut para a inicialização do Cygwin apontando-o para o script ``C:\tools\scripts\cygwin.bat`` (a diretório de inicialização deverá ser ``C:\tools\scripts``).
