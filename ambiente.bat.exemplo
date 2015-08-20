@@ -14,6 +14,7 @@ set SQLCL_HOME=%FERRAMENTAS_DIR%\sqlcl
 set PATH=%SQLCL_HOME%\bin;%PATH%
 
 set SQLDEVELOPER_HOME=%FERRAMENTAS_DIR%\sqldeveloper
+set PATH=%SQLDEVELOPER_HOME%;%PATH%
 
 set ECLIPSE_VER=eclipse-jee-mars-R
 rem set ECLIPSE_VER=eclipse-jee-luna-SR2
