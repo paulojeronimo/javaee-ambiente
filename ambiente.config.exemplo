@@ -1,1 +1,1 @@
-JBOSS_INSTALA_DIR=~/Downloads/gerador-jboss-bpmsuite-keycloak
+JBOSS_INSTALA_DIR=$PROJETOS_DIR/github.com/paulojeronimo/gerador-jboss-bpmsuite-keycloak
