@@ -1,7 +1,7 @@
 @echo off
 
-rem O Windows tem problemas com nomes longos. Então, evite-os!
-rem Use algo como "C:\tools":
+rem O Windows tem problemas com nomes longos :P. Evite-os!
+rem C:\tools é um bom local e é o diretório pai utilizado pelo Chocolatey para instalar o Cygwin
 set AMBIENTE_HOME=C:\tools
 
 set FERRAMENTAS_DIR=%AMBIENTE_HOME%\java

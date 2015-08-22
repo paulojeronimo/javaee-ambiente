@@ -30,9 +30,13 @@ cp ambiente.bat.exemplo ambiente.bat
 vim ambiente.bat
 ```
 
+Para fazer configurações particulares ao teu ambiente, você pode copiar arquivo [ambiente.config.exemplo](ambiente.config.exemplo) para ``ambiente.config`` e editá-lo conforme tuas necessidades. Nesse arquivo é possível, por exemplo, alterar o diretório padrão dos projetos, dos instaladores, dos backups, dos scripts, das ferrametas, etc. As variáveis que podem ser configuradas são lidas no arquivo [ambiente.sh](ambiente.sh) do projeto dotfiles.
+
 Por fim, ajuste o ambiente que será utilizado alterando o arquivo ``~/.ambiente`` com o seguinte comando:
 ```
 setenv ambiente
 ```
 
 Feche o shell. Altere o shortcut para a inicialização do Cygwin apontando-o para o script ``C:\tools\scripts\cygwin.bat`` (a diretório de inicialização deverá ser ``C:\tools\scripts``).
+
+Para utilizar um prompt de comando já configurado com as variávies de ambiente ajustadas no arquivo ``ambiente.bat`` crie um shortcut na tua área de trabalho para iniciar o script [cmd.bat](scripts/cmd.bat).
