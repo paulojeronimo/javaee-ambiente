@@ -1,6 +1,6 @@
 # Scripts para a montagem de um ambiente Java EE
 
-## Procedimentos 
+## Download e instalação deste projeto
 
 ### No Windows (8.1)
 
@@ -40,3 +40,31 @@ setenv ambiente
 Feche o shell. Altere o shortcut para a inicialização do Cygwin apontando-o para o script ``C:\tools\scripts\cygwin.bat`` (a diretório de inicialização deverá ser ``C:\tools\scripts``).
 
 Para utilizar um prompt de comando já configurado com as variávies de ambiente ajustadas no arquivo ``ambiente.bat`` crie um shortcut na tua área de trabalho para iniciar o script [cmd.bat](scripts/cmd.bat).
+
+### No Linux
+
+TODO
+
+### No OS X
+
+TODO
+
+## Instalação de ferramentas
+
+### Instalação do Maven
+
+Execute:
+```
+maven_instalar
+mvn -v
+```
+
+### Instalação do SQL Developer e do SQLcl
+
+Baixe ([do site da Oracle](http://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)) os binários do SQL Developer e do SQLcl para o dirtetório ``$INSTALADORES_DIR`` (no Windows, esse é o diretório ``C:\tools\instaladores``).
+
+Execute:
+```
+sqldeveloper_instalar
+sqlcl_instalar
+```

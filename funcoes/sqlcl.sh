@@ -12,4 +12,7 @@ sqlcl() {
     esac
 }
 
+sqlcl_instalar() { sqlcl install; }
+sqlcl_remover() { sqlcl remover; }
+
 # vim: ts=4 sw=4 expandtab:
