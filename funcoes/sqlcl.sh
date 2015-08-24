@@ -13,6 +13,6 @@ sqlcl() {
 }
 
 sqlcl_instalar() { sqlcl install; }
-sqlcl_remover() { sqlcl remover; }
+sqlcl_remover() { sqlcl remove; }
 
 # vim: ts=4 sw=4 expandtab:
