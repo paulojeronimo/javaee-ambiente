@@ -9,6 +9,12 @@ sqlcl() {
         remove)
             remover sqlcl "$@"
             ;;
+        *)
+            case $PLATAFORMA in
+                Cygwin) $SQLCL_HOME/bin/sql.bat "$@";;
+                *) $SQLCL_HOME/bin/sql "$@";;
+            esac
+            ;;
     esac
 }
 
