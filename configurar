@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $PWD = $AMBIENTE_HOME ]]
+then
+    cp ambiente.config.exemplo ambiente.config
+    source ambiente.config
+else
+    cd "$AMBIENTE_HOME"
+    f="$OLDPWD"/ambiente.config
+    rm -f ${f##*/}
+    [ -f "$f" ] || cp "$f.exemplo" "$f"
+    ln -s "$f"
+    source ${f##*/}
+    cd - &> /dev/null
+fi
