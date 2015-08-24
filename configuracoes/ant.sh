@@ -4,7 +4,7 @@ ANT_LINK=ant
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$ANT_HOME" ] && export ANT_HOME=`cygpath "$ANT_HOME"`
+        [ "$ANT_HOME" ] && export ANT_HOME=`cygpath -m "$ANT_HOME"`
         ;;
     *) 
         export ANT_HOME=$FERRAMENTAS_DIR/$ANT_LINK

@@ -21,7 +21,7 @@ KEYCLOAK_INSTALADOR_URL_COMPLETA=$KEYCLOAK_BASE_URL/$KEYCLOAK_VER/$KEYCLOAK_INST
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$KEYCLOAK_HOME" ] && export KEYCLOAK_HOME=`cygpath "$KEYCLOAK_HOME"`
+        [ "$KEYCLOAK_HOME" ] && export KEYCLOAK_HOME=`cygpath -m "$KEYCLOAK_HOME"`
         ;;
     *) 
         export KEYCLOAK_HOME

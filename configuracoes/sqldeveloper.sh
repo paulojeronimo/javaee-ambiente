@@ -9,7 +9,7 @@ case $PLATAFORMA in
     Cygwin) 
         if [ "$SQLDEVELOPER_HOME" ]
         then
-            export SQLDEVELOPER_HOME=`cygpath "$SQLDEVELOPER_HOME"`
+            export SQLDEVELOPER_HOME=`cygpath -m "$SQLDEVELOPER_HOME"`
         fi
     ;;
     *) 

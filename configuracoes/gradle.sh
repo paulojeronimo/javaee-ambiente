@@ -4,7 +4,7 @@ GRADLE_LINK=gradle
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$GRADLE_HOME" ] && export GRADLE_HOME=`cygpath "$GRADLE_HOME"`
+        [ "$GRADLE_HOME" ] && export GRADLE_HOME=`cygpath -m "$GRADLE_HOME"`
         ;;
     *) 
         export GRADLE_HOME=$FERRAMENTAS_DIR/$GRADLE_LINK

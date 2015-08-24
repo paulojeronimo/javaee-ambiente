@@ -4,7 +4,7 @@ FORGE_LINK=forge
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$FORGE_HOME" ] && export FORGE_HOME=`cygpath "$FORGE_HOME"`
+        [ "$FORGE_HOME" ] && export FORGE_HOME=`cygpath -m "$FORGE_HOME"`
         ;;
     *) 
         export FORGE_HOME=$FERRAMENTAS_DIR/$FORGE_LINK

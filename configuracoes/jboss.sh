@@ -17,16 +17,13 @@ JBOSS_INSTALA_OPCS='--nao-baixa-arquivo'
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$JBOSS_HOME" ] && export JBOSS_HOME=`cygpath "$JBOSS_HOME"`
+        [ "$JBOSS_HOME" ] && export JBOSS_HOME=`cygpath -m "$JBOSS_HOME"`
         ;;
     *) 
         export JBOSS_HOME=$FERRAMENTAS_DIR/jboss
         export PATH=$JBOSS_HOME/bin:$PATH
         ;;
 esac
-
-# resolve o bug de não ter essa variável ajustada no standalone.sh antes da chamada a cygpath
-#export JBOSS_MODULEPATH=$JBOSS_HOME/modules
 
 JBOSS_BASE=$JBOSS_HOME/standalone
 JBOSS_CONFIGURATION=$JBOSS_BASE/configuration

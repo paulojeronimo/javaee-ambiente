@@ -2,7 +2,7 @@
 
 if [ "$JAVA_HOME" ]
 then
-    JAVA_HOME=`cygpath "$JAVA_HOME"`
+    JAVA_HOME=`cygpath -m "$JAVA_HOME"`
 else
     echo 'A variável JAVA_HOME não está configurada!'
 fi

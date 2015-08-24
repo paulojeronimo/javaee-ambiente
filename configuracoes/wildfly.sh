@@ -8,7 +8,7 @@ WILDFLY_INSTALADOR_URL_COMPLETA=http://download.jboss.org/wildfly/$WILDFLY_VER/$
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$WILDFLY_HOME" ] && export WILDFLY_HOME=`cygpath "$WILDFLY_HOME"`
+        [ "$WILDFLY_HOME" ] && export WILDFLY_HOME=`cygpath -m "$WILDFLY_HOME"`
         ;;
     *) 
         export WILDFLY_HOME=$FERRAMENTAS_DIR/wildfly
