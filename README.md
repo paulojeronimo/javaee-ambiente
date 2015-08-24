@@ -30,7 +30,7 @@ cp ambiente.bat.exemplo ambiente.bat
 vim ambiente.bat
 ```
 
-Para fazer configurações particulares ao teu ambiente, você pode copiar arquivo [ambiente.config.exemplo](ambiente.config.exemplo) para ``ambiente.config`` e editá-lo conforme tuas necessidades. Nesse arquivo é possível, por exemplo, alterar o diretório padrão dos projetos, dos instaladores, dos backups, dos scripts, das ferrametas, etc. As variáveis que podem ser configuradas são lidas no arquivo [ambiente.sh](ambiente.sh) do projeto dotfiles.
+Para fazer configurações particulares ao teu ambiente, você pode copiar arquivo [ambiente.config.exemplo](ambiente.config.exemplo) para ``ambiente.config`` e editá-lo conforme tuas necessidades. Nesse arquivo é possível, por exemplo, alterar o diretório padrão dos projetos, dos instaladores, dos backups, dos scripts, das ferrametas, definir funções, etc. As variáveis que podem ser configuradas estão no script [ambiente.sh](https://github.com/paulojeronimo/dotfiles/blob/master/.funcoes/ambiente.sh) do projeto dotfiles.
 
 Por fim, ajuste o ambiente que será utilizado alterando o arquivo ``~/.ambiente`` com o seguinte comando:
 ```
