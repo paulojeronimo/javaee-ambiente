@@ -52,7 +52,16 @@ eclipse_restaurar() {
     eclipse_restaurar_workspace
 }
 eclipse() {
-    "$ECLIPSE_HOME"/eclipse -data "$AMBIENTE_HOME"/workspace
+    local eclipse_bin=eclipse
+    case $PLATAFORMA in
+        Darwin)
+            open -a "$ECLIPSE_HOME" --args -data "$AMBIENTE_HOME"/workspace
+            return
+        ;;
+        Cygwin)
+            eclipse_bin=eclipse.exe
+    esac
+    "$ECLIPSE_HOME"/$eclipse_bin -data "$AMBIENTE_HOME"/workspace &> /dev/null &
 }
 
 # vim: set ts=4 sw=4 expandtab:
