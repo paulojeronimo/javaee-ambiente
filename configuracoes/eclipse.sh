@@ -12,17 +12,17 @@ ECLIPSE_VERSION=`echo $ECLIPSE_VER | cut -f 3 -d-`
 ECLIPSE_RELEASE=`echo $ECLIPSE_VER | cut -f 4 -d-`
 ECLIPSE_INSTALADOR_URL=http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/$ECLIPSE_VERSION/$ECLIPSE_RELEASE
 ECLIPSE_CONFIGURADO=eclipse.$PLATAFORMA.tar.gz
-
-export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR.$PLATAFORMA
-if ! [ "$PLATAFORMA" = "Cygwin" ]
-then
-    export PATH=$ECLIPSE_HOME:$PATH
-fi
-
-eclipse() {
-    local eclipse_bin=eclipse
-    [ "$PLATAFORMA" = "Cygwin" ] && eclipse_bin="eclipse.exe"
-    "$ECLIPSE_HOME"/$eclipse_bin &> /dev/null &
-}
+case $PLATAFORMA in
+    Darwin)
+        if [[ $ECLIPSE_VERSION = mars ]]
+        then
+            export ECLIPSE_HOME=$FERRAMENTAS_DIR/Eclipse.app
+        else
+            export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR.$PLATAFORMA
+        fi
+    ;;
+    *)
+    export ECLIPSE_HOME=$FERRAMENTAS_DIR/$ECLIPSE_DIR.$PLATAFORMA
+esac
 
 # vim set ts=4, sw=4, expandtab:
