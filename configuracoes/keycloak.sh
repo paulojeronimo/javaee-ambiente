@@ -1,10 +1,18 @@
 #!/bin/bash
 
-KEYCLOAK_VER=${KEYCLOAK_VER:-1.3.1.Final}
+KEYCLOAK_VER=${KEYCLOAK_VER:-1.4.0.Final}
 KEYCLOAK_LINK=keycloak
-KEYCLOAK_BASE_URL=http://ufpr.dl.sourceforge.net/project/keycloak
+KEYCLOAK_PORT_OFFSET=${KEYCLOAK_PORT_OFFSET:-0}
 case $KEYCLOAK_VER in
-    1.3.1.Final|1.2.0.Final)
+    1.4.0.Final)
+        KEYCLOAK_BASE_URL=http://downloads.jboss.org/keycloak
+        ;;
+    *) 
+        KEYCLOAK_BASE_URL=http://ufpr.dl.sourceforge.net/project/keycloak
+        ;;
+esac
+case $KEYCLOAK_VER in
+    1.4.0.Final|1.3.1.Final|1.2.0.Final)
         KEYCLOAK_DIR=keycloak-$KEYCLOAK_VER
         KEYCLOAK_INSTALADOR=$KEYCLOAK_DIR.tar.gz
         KEYCLOAK_HOME=$FERRAMENTAS_DIR/$KEYCLOAK_LINK
