@@ -2,6 +2,9 @@
 
 jboss_eap_instalar() { instalar jboss_eap "$@"; }
 jboss_eap_remover() { remover jboss_eap "$@"; }
+jboss_eap_cli() {
+    JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/jboss-cli.sh "$@"
+}
 _jboss_eap_service() {
     local op=$1
     case $PLATAFORMA in
@@ -10,23 +13,23 @@ _jboss_eap_service() {
                 Fedora) 
                     if [ "$op" = "start" ]
                     then 
-                        standalone.sh
+                        JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/standalone.sh
                     else
-                        jboss-cli.sh -c :shutdown
+                        jboss_eap_cli -c :shutdown
                     fi
                     ;;
                 CentOS|Ubuntu) 
-                    jboss-cli.sh -c :shutdown
+                    jboss_eap_cli -c :shutdown
                     ;;
             esac
             ;;
         Cygwin|Darwin)
             case $op in
                 start) 
-                    standalone.sh
+                    JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/standalone.sh
                     ;;
                 stop) 
-                    jboss-cli.sh -c :shutdown
+                    jboss_eap_cli -c :shutdown
                     ;;
             esac
             ;;
