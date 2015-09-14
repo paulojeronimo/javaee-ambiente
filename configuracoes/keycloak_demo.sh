@@ -1,0 +1,30 @@
+#!/bin/bash
+
+KEYCLOAK_DEMO_VER=${KEYCLOAK_DEMO_VER:-1.5.0.Final}
+KEYCLOAK_DEMO_LINK=keycloak-demo
+KEYCLOAK_DEMO_PORT_OFFSET=${KEYCLOAK_DEMO_PORT_OFFSET:-0}
+case $KEYCLOAK_DEMO_VER in
+    1.5.0.Final|1.4.0.Final)
+        KEYCLOAK_DEMO_BASE_URL=http://downloads.jboss.org/keycloak
+    ;;
+esac
+case $KEYCLOAK_DEMO_VER in
+    1.5.0.Final|1.4.0.Final)
+        KEYCLOAK_DEMO_DIR=${KEYCLOAK_DEMO_LINK}-$KEYCLOAK_DEMO_VER
+        KEYCLOAK_DEMO_INSTALADOR=${KEYCLOAK_DEMO_DIR}.tar.gz
+        KEYCLOAK_DEMO_HOME=$FERRAMENTAS_DIR/$KEYCLOAK_DEMO_LINK/keycloak
+    ;; 
+esac
+KEYCLOAK_DEMO_INSTALADOR_URL_COMPLETA=$KEYCLOAK_DEMO_BASE_URL/$KEYCLOAK_DEMO_VER/$KEYCLOAK_DEMO_INSTALADOR
+
+case $PLATAFORMA in
+    Cygwin) 
+        [ "$KEYCLOAK_DEMO_HOME" ] && export KEYCLOAK_DEMO_HOME=`cygpath -m "$KEYCLOAK_DEMO_HOME"`
+        ;;
+    *) 
+        export KEYCLOAK_DEMO_HOME
+        #export PATH=$KEYCLOAK_DEMO_HOME/bin:$PATH
+        ;;
+esac
+
+# vim set ts=4, sw=4, expandtab:

@@ -19,6 +19,10 @@ set KEYCLOAK_HOME=%FERRAMENTAS_DIR%\keycloak-%KEYCLOAK_VER%
 set KEYCLOAK_PORT_OFFSET=100
 rem set PATH=%KEYCLOAK_HOME%\bin;%PATH$
 
+set KEYCLOAK_DEMO_VER=1.5.0.Final
+set KEYCLOAK_DEMO_HOME=%FERRAMENTAS_DIR%\keycloak-demo-%KEYCLOAK_VER%
+set KEYCLOAK_DEMO_PORT_OFFSET=100
+
 set SQLCL_HOME=%FERRAMENTAS_DIR%\sqlcl
 set PATH=%SQLCL_HOME%\bin;%PATH%
 
@@ -46,7 +50,7 @@ set ANT_VER=1.9.6
 set ANT_HOME=%FERRAMENTAS_DIR%\apache-ant-%ANT_VER%
 set PATH=%ANT_HOME%\bin;%PATH%
 
-rem set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_51
+rem set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60
 rem set PATH=%JAVA_HOME%\bin;%PATH%
 
 set PATH=%USERPROFILE%\bin;%PATH%
