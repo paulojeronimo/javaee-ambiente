@@ -6,14 +6,14 @@ jboss_eap_cli() {
     JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/jboss-cli.sh "$@"
 }
 _jboss_eap_service() {
-    local op=$1
+    local op=$1; shift
     case $PLATAFORMA in
         Linux)
             case `distro` in
                 Fedora) 
                     if [ "$op" = "start" ]
                     then 
-                        JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/standalone.sh
+                        JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/standalone.sh "$@"
                     else
                         jboss_eap_cli -c :shutdown
                     fi
@@ -26,7 +26,7 @@ _jboss_eap_service() {
         Cygwin|Darwin)
             case $op in
                 start) 
-                    JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/standalone.sh
+                    JBOSS_HOME=$JBOSS_EAP_HOME "$JBOSS_EAP_HOME"/bin/standalone.sh "$@"
                     ;;
                 stop) 
                     jboss_eap_cli -c :shutdown
@@ -35,7 +35,7 @@ _jboss_eap_service() {
             ;;
     esac
 }
-jboss_eap_start() { _jboss_eap_service start; }
+jboss_eap_start() { _jboss_eap_service start "$@"; }
 jboss_eap_stop() { _jboss_eap_service stop; }
 jboss_eap_status() { _jboss_eap_service status; }
 jboss_eap_logs() { ls -lht "$JBOSS_EAP_LOG"/*.log; }

@@ -6,7 +6,7 @@ wildfly_cli() {
     JBOSS_HOME="$WILDFLY_HOME" "$WILDFLY_HOME"/bin/jboss-cli.sh "$@"
 }
 _wildfly_service() {
-    local op=$1
+    local op=$1; shift
     case $PLATAFORMA in
         Linux)
             case `distro` in
@@ -21,7 +21,7 @@ _wildfly_service() {
         Cygwin|Darwin)
             case $op in
                 start) 
-                    JBOSS_HOME="$WILDFLY_HOME" "$WILDFLY_HOME"/bin/standalone.sh
+                    JBOSS_HOME="$WILDFLY_HOME" "$WILDFLY_HOME"/bin/standalone.sh "$@"
                     ;;
                 stop) 
                     wildfly_cli -c :shutdown
@@ -30,7 +30,7 @@ _wildfly_service() {
             ;;
     esac
 }
-wildfly_start() { _wildfly_service start; }
+wildfly_start() { _wildfly_service start "$@"; }
 wildfly_stop() { _wildfly_service stop; }
 wildfly_status() { _wildfly_service status; }
 wildfly_logs() { ls -lht "$WILDFLY_LOG"/*.log; }
