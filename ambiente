@@ -1,10 +1,3 @@
 #!/bin/bash
-# Author: Paulo Jerônimo (email: paulojeronimo@gmail.com; twitter: @paulojeronimo)
-#
-# Script para configuração de um ambiente de lab para aplicações Java EE
-# Pode ser utilizado no OS X (Darwin) e no Linux (Ubuntu, Fedora, CentOS)
 
-# retorna o caminho completo para o diretório que contém esse script
-_this_dir() { echo -n $(cd "$(dirname "$(caller | cut -d ' ' -f 2-)")"; pwd); }
-
-_carregar_ambiente "`_this_dir`"
+_carregar_ambiente "`_pwd`"
