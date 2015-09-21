@@ -34,7 +34,7 @@ rem set ECLIPSE_VER=eclipse-jee-luna-SR2
 set ECLIPSE_HOME=%FERRAMENTAS_DIR%\eclipse.Cygwin
 set PATH=%ECLIPSE_HOME%;%PATH%
 
-set FORGE_VER=2.19.0.Final
+set FORGE_VER=2.19.2.Final
 set FORGE_HOME=%FERRAMENTAS_DIR%\forge-distribution-%FORGE_VER%
 set PATH=%FORGE_HOME%\bin;%PATH%
 
