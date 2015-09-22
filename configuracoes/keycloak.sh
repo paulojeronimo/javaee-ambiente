@@ -1,10 +1,10 @@
 #!/bin/bash
 
-KEYCLOAK_VER=${KEYCLOAK_VER:-1.4.0.Final}
+KEYCLOAK_VER=${KEYCLOAK_VER:-1.5.0.Final}
 KEYCLOAK_LINK=keycloak
 KEYCLOAK_PORT_OFFSET=${KEYCLOAK_PORT_OFFSET:-0}
 case $KEYCLOAK_VER in
-    1.4.0.Final)
+    1.5.0.Final|1.4.0.Final)
         KEYCLOAK_BASE_URL=http://downloads.jboss.org/keycloak
         ;;
     *) 
@@ -12,10 +12,9 @@ case $KEYCLOAK_VER in
         ;;
 esac
 case $KEYCLOAK_VER in
-    1.4.0.Final|1.3.1.Final|1.2.0.Final)
-        KEYCLOAK_DIR=keycloak-$KEYCLOAK_VER
+    1.5.0.Final|1.4.0.Final|1.3.1.Final|1.2.0.Final)
+        KEYCLOAK_DIR=$KEYCLOAK_LINK-$KEYCLOAK_VER
         KEYCLOAK_INSTALADOR=$KEYCLOAK_DIR.tar.gz
-        KEYCLOAK_HOME=$FERRAMENTAS_DIR/$KEYCLOAK_LINK
         KEYCLOAK_EXAMPLES_DIR=keycloak-examples-$KEYCLOAK_VER
         KEYCLOAK_EXAMPLES_URL=$KEYCLOAK_BASE_URL/$KEYCLOAK_VER/${KEYCLOAK_EXAMPLES_DIR}.zip
         ;; 
@@ -29,12 +28,15 @@ KEYCLOAK_INSTALADOR_URL_COMPLETA=$KEYCLOAK_BASE_URL/$KEYCLOAK_VER/$KEYCLOAK_INST
 
 case $PLATAFORMA in
     Cygwin) 
-        [ "$KEYCLOAK_HOME" ] && export KEYCLOAK_HOME=`cygpath -m "$KEYCLOAK_HOME"`
+        export KEYCLOAK_HOME=`cygpath -m "$FERRAMENTAS_DIR"/$KEYCLOAK_DIR`
+        [[ $JBOSS = $KEYCLOAK_LINK ]] && export PATH=$FERRAMENTAS_DIR/$KEYCLOAK_DIR/bin:$PATH
         ;;
     *) 
-        export KEYCLOAK_HOME
-        #export PATH=$KEYCLOAK_HOME/bin:$PATH
+        export KEYCLOAK_HOME=$FERRAMENTAS_DIR/$KEYCLOAK_LINK
+        [[ $JBOSS = $KEYCLOAK_LINK ]] && export PATH=$KEYCLOAK_HOME/bin:$PATH
         ;;
 esac
+
+[[ $JBOSS = $KEYCLOAK_LINK ]] && export JBOSS_HOME=$KEYCLOAK_HOME || true
 
 # vim set ts=4, sw=4, expandtab:

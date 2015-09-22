@@ -1,27 +1,28 @@
 @echo off
 
-rem O Windows tem problemas com nomes longos :P. Evite-os!
-rem C:\tools é um bom local e é o diretório pai utilizado pelo Chocolatey para instalar o Cygwin
-set AMBIENTE_HOME=C:\tools
+set FERRAMENTAS_DIR=C:\tools\java
 
-set FERRAMENTAS_DIR=%AMBIENTE_HOME%\java
+rem --- VERSÕES DE JBOSS: (INÍCIO) ----
+set JBOSS=jboss-eap
 
 set JBOSS_EAP_VER=6.4
 set JBOSS_EAP_HOME=%FERRAMENTAS_DIR%\jboss-eap-%JBOSS_EAP_VER%
-rem set PATH=%JBOSS_EAP_HOME%\bin;%PATH%
+if %JBOSS%==jboss-eap set JBOSS_HOME=%JBOSS_EAP_HOME%
 
 set WILDFLY_VER=9.0.1.Final
 set WILDFLY_HOME=%FERRAMENTAS_DIR%\wildfly-%WILDFLY_VER%
-rem set PATH=%WILDFLY_HOME%\bin;%PATH%
+if %JBOSS%==wildfly set JBOSS_HOME=%WILDFLY_HOME%
 
-set KEYCLOAK_VER=1.4.0.Final
+set KEYCLOAK_VER=1.5.0.Final
 set KEYCLOAK_HOME=%FERRAMENTAS_DIR%\keycloak-%KEYCLOAK_VER%
-set KEYCLOAK_PORT_OFFSET=100
-rem set PATH=%KEYCLOAK_HOME%\bin;%PATH$
+if %JBOSS%==keycloak set JBOSS_HOME=%KEYCLOAK_HOME%
 
 set KEYCLOAK_DEMO_VER=1.5.0.Final
 set KEYCLOAK_DEMO_HOME=%FERRAMENTAS_DIR%\keycloak-demo-%KEYCLOAK_VER%
-set KEYCLOAK_DEMO_PORT_OFFSET=100
+if %JBOSS%==keycloak-demo set JBOSS_HOME=%KEYCLOAK_DEMO_HOME%\keycloak
+
+set PATH=%JBOSS_HOME%\bin;%PATH%
+rem --- VERSÕES DE JBOSS: (FIM) ----
 
 set SQLCL_HOME=%FERRAMENTAS_DIR%\sqlcl
 set PATH=%SQLCL_HOME%\bin;%PATH%
@@ -52,8 +53,3 @@ set PATH=%ANT_HOME%\bin;%PATH%
 
 rem set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60
 rem set PATH=%JAVA_HOME%\bin;%PATH%
-
-set PATH=%USERPROFILE%\bin;%PATH%
-
-set CYGWIN_HOME=%AMBIENTE_HOME%\cygwin
-set PATH=%CYGWIN_HOME%\bin;%PATH%

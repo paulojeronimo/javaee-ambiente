@@ -1,3 +1,5 @@
 #!/bin/bash
 
+[[ $PLATAFORMA = Cygwin ]] && FERRAMENTAS_DIR=C:/tools/java
 PROJETOS_DIR=~/Projects
+JBOSS=jboss-eap

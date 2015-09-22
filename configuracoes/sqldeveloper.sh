@@ -7,10 +7,8 @@ SQLDEVELOPER_INSTALA_OPCS='--nao-baixa-arquivo'
 
 case $PLATAFORMA in
     Cygwin) 
-        if [ "$SQLDEVELOPER_HOME" ]
-        then
-            export SQLDEVELOPER_HOME=`cygpath -m "$SQLDEVELOPER_HOME"`
-        fi
+        export SQLDEVELOPER_HOME=`cygpath -m "$FERRAMENTAS_DIR"/$SQLDEVELOPER_DIR`
+        export PATH=$FERRAMENTAS_DIR/$SQLDEVELOPER_DIR:$PATH
     ;;
     *) 
         export SQLDEVELOPER_HOME=$FERRAMENTAS_DIR/$SQLDEVELOPER_DIR

@@ -7,10 +7,8 @@ SQLCL_INSTALA_OPCS='--nao-baixa-arquivo'
 
 case $PLATAFORMA in
     Cygwin) 
-        if [ "$SQLCL_HOME" ]
-        then
-            export SQLCL_HOME=`cygpath -m "$SQLCL_HOME"`
-        fi
+        export SQLCL_HOME=`cygpath -m "$FERRAMENTAS_DIR"/$SQLCL_DIR`
+        export PATH=$FERRAMENTAS_DIR/$SQLCL_DIR/bin:$PATH
         ;;
     *) 
         export SQLCL_HOME=$FERRAMENTAS_DIR/$SQLCL_DIR
