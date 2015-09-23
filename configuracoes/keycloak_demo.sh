@@ -15,7 +15,7 @@ case $PLATAFORMA in
         ;;
     *) 
         export KEYCLOAK_DEMO_HOME=$FERRAMENTAS_DIR/$KEYCLOAK_DEMO_LINK/keycloak
-        [[ $JBOSS = $KEYCLOA_DEMO_LINK ]] && export PATH=$KEYCLOAK_DEMO_HOME/bin:$PATH
+        [[ $JBOSS = $KEYCLOAK_DEMO_LINK ]] && export PATH=$KEYCLOAK_DEMO_HOME/bin:$PATH
         ;;
 esac
 
