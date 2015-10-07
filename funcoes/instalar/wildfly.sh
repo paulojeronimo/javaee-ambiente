@@ -14,7 +14,7 @@ _baixa_driver_jdbc_postgres() {
 }
 
 _instala_driver_jdbc_postgres() {
-    local driver_dir="$JBOSS_HOME"/modules/system/layers/base/org/postgresql/main
+    local driver_dir="$WILDFLY_HOME"/modules/system/layers/base/org/postgresql/main
     echo "Instalando o driver JDBC do PostgreSQL como módulo"
     mkdir -p "$driver_dir"
     cat > "$driver_dir"/module.xml << EOF
@@ -35,9 +35,8 @@ EOF
 }
 
 instala_wildfly() {
-    local file2patch
     local original_file
-    local patch_file
+
     instala_aplicacao
 
     if [ "$PLATAFORMA" = "Linux" ]
@@ -46,44 +45,35 @@ instala_wildfly() {
         cat <<EOF | sudo tee `_wildfly_conf` &> /dev/null
 JAVA_HOME="$JAVA_HOME"
 JBOSS_USER=$USER
-JBOSS_HOME="$JBOSS_HOME"
+JBOSS_HOME="$WILDFLY_HOME"
 JBOSS_MODE=standalone
-JBOSS_PARAMS="-b 0.0.0.0 -bmanagement=0.0.0.0"
 EOF
 
         case `distro` in
             Fedora|CentOS)
-                original_file="$JBOSS_HOME"/bin/init.d/wildfly-init-redhat.sh
-                patch_file="$FUNCOES_DIR"/instalar/patches/JBOSS_HOME/bin/init.d/wildfly-init-redhat.sh
+                original_file="$WILDFLY_HOME"/bin/init.d/wildfly-init-redhat.sh
                 ;;
             Ubuntu)
-                original_file="$JBOSS_HOME"/bin/init.d/wildfly-init-debian.sh
-                patch_file="$FUNCOES_DIR"/instalar/patches/JBOSS_HOME/bin/init.d/wildfly-init-debian.sh
+                original_file="$WILDFLY_HOME"/bin/init.d/wildfly-init-debian.sh
                 ;;
         esac
-        echo "Aplicando patch ao arquivo \"$original_file\""
-        patch "$original_file" < "$patch_file" > /dev/null
 
-        echo "Copiando arquivo \"$original_file\" para /etc/init.d/jboss"
-        sudo cp "$original_file" /etc/init.d/jboss
+        echo "Copiando arquivo \"$original_file\" para /etc/init.d/wildfly"
+        sudo cp "$original_file" /etc/init.d/wildfly
     fi
-
-    #file2patch=standalone/configuration/standalone.xml
-    #echo "Aplicando patch no arquivo $JBOSS_HOME/$file2patch"
-    #patch "$JBOSS_HOME"/$file2patch < "$FUNCOES_DIR"/instalar/patches/JBOSS_HOME/$file2patch > /dev/null
 
     _instala_driver_jdbc_postgres
 
     echo "Configurando o usuário/senha (admin/@dmin123) para acesso a interface administrativa"
-    echo 'admin=e17dc970fbc40f5d003d1e3e431985f5' | tee -a "$JBOSS_CONFIGURATION"/mgmt-users.properties &> /dev/null
-    echo 'admin=' | tee -a "$JBOSS_CONFIGURATION"/mgmt-groups.properties &> /dev/null
+    echo 'admin=e17dc970fbc40f5d003d1e3e431985f5' | tee -a "$WILDFLY_CONFIGURATION"/mgmt-users.properties &> /dev/null
+    echo 'admin=' | tee -a "$WILDFLY_CONFIGURATION"/mgmt-groups.properties &> /dev/null
 
     if [ "$PLATAFORMA" = "Linux" ]
     then
         echo "Configurando a inicialização automática no boot"
         case `distro` in
-            Fedora|CentOS) sudo chkconfig jboss on;;
-            Ubuntu) sudo update-rc.d jboss defaults;;
+            Fedora|CentOS) sudo chkconfig wildfly on;;
+            Ubuntu) sudo update-rc.d wildfly defaults;;
         esac
     fi
 }
@@ -91,8 +81,8 @@ EOF
 remove_wildfly() {
     if [ "$PLATAFORMA" = "Linux" ]
     then
-        local jboss_files="/etc/init.d/jboss `_wildfly_conf`"
-        for f in $jboss_files
+        local wildfly_files="/etc/init.d/wildfly `_wildfly_conf`"
+        for f in $wildfly_files
         do
             if [ -f "$f" ]
             then
