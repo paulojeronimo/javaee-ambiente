@@ -53,3 +53,5 @@ set PATH=%ANT_HOME%\bin;%PATH%
 
 rem set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_60
 rem set PATH=%JAVA_HOME%\bin;%PATH%
+
+set PATH=%USERPROFILE%\bin;%PATH%
