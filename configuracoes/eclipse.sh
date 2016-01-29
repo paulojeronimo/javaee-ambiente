@@ -2,7 +2,7 @@
 
 ECLIPSE_DIR=eclipse
 ECLIPSE_LINK=$ECLIPSE_DIR
-ECLIPSE_VER=${ECLIPSE_VER:-eclipse-jee-mars-R} # Possibilidades: eclipse-jee-mars-R, eclipse-jee-luna-SR2
+ECLIPSE_VER=${ECLIPSE_VER:-eclipse-jee-mars-1} # Algumas das possibilidades: eclipse-jee-mars-1, eclipse-jee-mars-R, eclipse-jee-luna-SR2
 case $PLATAFORMA in
     Linux) ECLIPSE_INSTALADOR=$ECLIPSE_VER-linux-gtk-x86_64.tar.gz;;
     Darwin) ECLIPSE_INSTALADOR=$ECLIPSE_VER-macosx-cocoa-x86_64.tar.gz;;
